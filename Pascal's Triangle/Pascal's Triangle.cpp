@@ -27,23 +27,25 @@ int main()
 	while (true)
 	{
 		int count = 0;
-		std::cout << "Number of elements in the array: ";
+		std::cout << "Number of rows of the Pascal's triangle: ";
 		std::cin >> count;
 		if (count == 0)
 			break;
 
         auto vec = PascalTriangleRow(count);
         bool isFirstElement = true;
+        std::cout << "The " << count << "th row of the Pascal's triangle is ";
+        std::cout << "[";
         for (auto i : vec)
         {
             if (!isFirstElement)
-                std::cout << "  ";
+                std::cout << " ";
             else
                 isFirstElement = false;
 
             std::cout << i;
         }
 
-		std::cout << std::endl;
+		std::cout << "]" << std::endl;
 	}
 }
